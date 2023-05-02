@@ -1,35 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notes_container"
+    android:layout_margin="@dimen/_5sdp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:layout_marginBottom="10dp"
-    android:background="@drawable/rounded_corner"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <TextView
+    app:cardBackgroundColor="@color/colorDefaultNoteColor">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/titleoutput"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        tools:text="My title"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/descriptionoutput"
-        android:layout_below="@id/titleoutput"
-        android:textColor="#393939"
-        tools:text="My long long long descrption"/>
+        android:layout_height="wrap_content">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            app:riv_corner_radius_top_left="@dimen/_10sdp"
+            app:riv_corner_radius_top_right="@dimen/_10sdp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/titleoutput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                tools:text="My title" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/timeoutput"
-        android:layout_below="@id/descriptionoutput"
-        android:textSize="12dp"
-        android:gravity="end"
-        android:textColor="#858484"
-        tools:text="Jan 21 2020 "/>
+            <ImageView
+                android:id="@+id/imageView_pin"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 
-</RelativeLayout>
+
+        <TextView
+            android:id="@+id/descriptionoutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleoutput"
+            android:maxLines="10"
+            android:padding="8dp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="normal"
+            tools:text="My long long long descrption" />
+
+        <TextView
+            android:id="@+id/timeoutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionoutput"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="end"
+            android:fontFamily="@font/ubuntu_medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7ssp"
+            tools:text="Jan 21 2020 " />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
