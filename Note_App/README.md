@@ -17,3 +17,4 @@ Note App: Ứng dụng ghi chú và ghi lại những việc cần làm
 8. Thêm, Sửa, Xóa những việc cần làm (đều được lưu vào database)
 9. Sắp xếp công việc lần lượt theo thứ tự 
 10. Đánh dấu khi hoàn thành việc 
+11. Đăng nhập, Đăng kí, Đăng suất sử dụng Firebase Service
